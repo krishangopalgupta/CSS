@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 100%;
+  background-color: #ffffff80;
+  position: relative;
+}
+
+.width {
+  width: 90%;
+}
+.navbar {
+  height: 80px;
+  margin: auto;
+  position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 0 0.3rem #d3d3d3;
+}
+
+.logo {
+  width: 50%;
+  font-size: 1.5rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.list-items {
+  width: 50%;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li {
+  margin-left: 4px;
+  list-style: none;
+}
+
+ul li a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/* Bars */
+.bars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  display: none;
+  padding: 0.3rem;
+}
+
+.bars .bar1 {
+  width: 20px;
+  height: 4px;
+  margin-bottom: 2px;
+  background-color: #000;
+}
+.bars .bar2 {
+  width: 20px;
+  height: 4px;
+  margin-bottom: 2px;
+  background-color: #000;
+}
+.bars .bar3 {
+  width: 20px;
+  height: 4px;
+  background-color: #000;
+}
+
+/* media query for navbar */
+@media screen and (max-width: 800px) {
+  .bars {
+    display: inline-flex;
+    position: fixed;
+    z-index: 100;
+    right: 10%;
+  }
+
+  .list-items {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    /* top: -200%; */
+    right: -200%;
+    opacity: 0.9;
+  }
+
+  .list-items ul {
+    position: fixed;
+    width: 50%;
+    height: 70vh;
+    flex-direction: column;
+    background-color: #000;
+  }
+
+  .list-items ul li {
+    padding: 2rem 0;
+  }
+  .list-items li a {
+    color: white;
+  }
+
+  .show-items.list-items {
+    top: 0;
+    /* left: 0; */
+
+    /* right: 0; */
+    right: -50%;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .rotate-bars .bar1 {
+    transform: rotate(-50deg);
+
+    transition: 0.6s ease-in-out;
+    background-color: #fff;
+  }
+
+  .rotate-bars .bar2 {
+    display: none;
+  }
+
+  .rotate-bars .bar3 {
+    background-color: #fff;
+    transition: 0.6s ease-in-out;
+    transform: rotate(50deg);
+  }
+}
+
+/* section */
+
+#home {
+  margin-top: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.about {
+  display: flex;
+  transition: all 4s ease-in-out;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+.left-about {
+  padding: 0 1rem;
+  width: 50%;
+  z-index: -1;
+}
+
+.left-about p:nth-child(1) {
+  text-align: left;
+  padding-bottom: 3rem;
+  font-size: 3rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.left-about p:nth-child(2) {
+  font-size: 1.2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 1px;
+  line-height: 2rem;
+}
+.right-about {
+  padding: 0 1rem;
+  height: 400px;
+  width: 50%;
+  position: relative;
+  /* border: 2px solid red; */
+}
+.right-about img {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 100%;
+  animation: UpAndDownImage 4s ease-in-out infinite;
+}
+
+@keyframes UpAndDownImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about {
+    flex-direction: column-reverse;
+  }
+  .left-about {
+    width: 80%;
+  }
+  .left-about p:nth-child(1) {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  .left-about p:nth-child(2) {
+    text-align: center;
+  }
+
+  .right-about {
+    /* border: 2px solid red; */
+    width: 80%;
+  }
+}
+
+/* skills section */
+
+/* Error in skill container it can be shown when given border */
+.skillContainer {
+  max-width: 100%;
+  position: relative;
+  padding: 3rem;
+}
+
+#skills {
+  max-width: 90%;
+  margin: auto;
+}
+
+#skills > p {
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.programming {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.programming > div {
+  width: 300px;
+  /* margin: 4px 4px; */
+  height: 300px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px 0.6px #aca9a981;
+  cursor: pointer;
+  text-align: center;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  transition: transform 0.5s;
+}
+
+.programming > div:hover{
+ transform: scale(1.1);
+}
+
+.programming p{
+  font-size: 1rem;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+}
+
+.programming .imgsource {
+  width: 33%;
+  height: 33%;
+  padding: 4px 0;
+}
